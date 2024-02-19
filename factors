@@ -1,0 +1,23 @@
+#!/usr/bin/env python3
+""" Factor numbers """
+from sys import argv
+
+def factorize_prime(listt):
+    for n in listt:
+        for i in range(2,n):
+            if n == ((n // i) * i):
+                print("{}={}*{}".format(n,(n // i), i))
+                break
+
+def open_file(path):
+    """ open file from path """
+    with open(path, 'r', encoding='utf-8') as file:
+        lines = file.readlines()
+    
+    for line in lines:
+        number_list.append(int(line))
+
+number_list = []
+if len(argv) == 2:
+    open_file(argv[1])
+    factorize_prime(number_list)
